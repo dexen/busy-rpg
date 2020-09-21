@@ -5,7 +5,7 @@
 (load "server.l")
 
 (my-server
-	"public_html"
+	"ctl"
 	'("GET-index", "POST-xp-gain")
 )
 
