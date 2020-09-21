@@ -20,13 +20,9 @@
 )
 
 (de _my-htQuerySegment (segment)
-	(let (
-		name (intern (glue "" (car (split segment "="))))
-		value (intern (glue "" (cdr (split segment "=")))) )
-
-		(prinl "name=value:" name "=" value)
-
-		(put '*RequestGet name value) )
+	(put '*RequestGet
+		(intern (glue "" (car (split segment "="))))
+		(intern (glue "" (cdr (split segment "=")))) )
 #(show '*RequestGet)
 )
 
