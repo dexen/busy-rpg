@@ -22,7 +22,7 @@
 (de _my-htQuerySegment (segment)
 	(put '*RequestGet
 		(intern (glue "" (car (split segment "="))))
-		(intern (glue "" (cdr (split segment "=")))) )
+		(glue "" (cdr (split segment "="))) )
 #(show '*RequestGet)
 )
 
