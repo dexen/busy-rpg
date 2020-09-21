@@ -22,6 +22,7 @@
 	(prin "\" value=\"")
 	(ht:Prin Value)
 	(prin "\"")
+	(prin ">")
 	(if (atom Prg)
 		(ht:Prin (eval Prg Ofs))
 		(for X Prg
