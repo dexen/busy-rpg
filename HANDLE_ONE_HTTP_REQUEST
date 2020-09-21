@@ -3,6 +3,7 @@
 (load "@lib/http.l" "@lib/xhtml.l")
 
 (load "server.l")
+(load "html.l")
 
 (my-server
 	"ctl"
