@@ -21,8 +21,8 @@
 
 (de _my-htQuerySegment (segment)
 	(put '*RequestGet
-		(intern (glue "" (car (split segment "="))))
-		(glue "" (cdr (split segment "="))) )
+		(intern (ht:Pack (car (split segment "=")) T))
+		(ht:Pack (cadr (split segment "=")) T) )
 #(show '*RequestGet)
 )
 
