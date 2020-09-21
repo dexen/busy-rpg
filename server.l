@@ -11,7 +11,7 @@
 			("referer:" (setq *RequestReferer (cdr (line))))
 			(T (if (eol) (char) (line T))) ) )
 
-	(let (a (chop *RequestUrl) i (index "?" a))
+	(let (a (chop *RequestUrl) i (or (index "?" a) (inc (length a))))
 		(setq *RequestPathname (glue "" (head (dec i) a)))
 		(setq *RequestQuery (glue "" (tail (- i) a)))
 	)
