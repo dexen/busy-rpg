@@ -1,0 +1,12 @@
+#!/usr/bin/pil
+
+(load "@lib/http.l" "@lib/xhtml.l")
+
+(load "server.l")
+
+(my-server
+	"public_html"
+	'("GET-index", "POST-xp-gain")
+)
+
+(bye)

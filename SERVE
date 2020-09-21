@@ -1,0 +1,5 @@
+#!/usr/bin/env rc
+
+flag e +
+
+listen1 'tcp!localhost!7172' ./HANDLE_ONE_HTTP_REQUEST
