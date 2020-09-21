@@ -15,6 +15,23 @@
 		(setq *RequestPathname (glue "" (head (dec i) a)))
 		(setq *RequestQuery (glue "" (tail (- i) a)))
 	)
+
+	(my-htQuery *RequestQuery)
+)
+
+(de _my-htQuerySegment (segment)
+	(let (
+		name (intern (glue "" (car (split segment "="))))
+		value (intern (glue "" (cdr (split segment "=")))) )
+
+		(prinl "name=value:" name "=" value)
+
+		(put '*RequestGet name value) )
+#(show '*RequestGet)
+)
+
+(de my-htQuery (query)
+	(mapcar _my-htQuerySegment (split (chop query) "&"))
 )
 
 (de server-dump-debug ()
@@ -27,6 +44,7 @@
 (de my-server (WebRoot AvailablePages)
 	(off *RequestMethod *RequestHttpVersion
 		*RequestUrl *RequestPathname *RequestQuery
+		*RequestGet *RequestPost
 		*RequestHost *RequestReferer
 		*RequestPayload *RequestData)
 
