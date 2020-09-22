@@ -54,7 +54,7 @@
 	(show '*RequestHeadersSingular)
 )
 
-(de my-server (WebRoot AvailablePages)
+(de my-server (WebRoot AvailablePages AssetsRoot AvailableAssets)
 	(off *RequestMethod *RequestHttpVersion
 		*RequestUrl # whole uri
 			*RequestPathname # pathname part of uri, without the trailing "?"
@@ -77,12 +77,29 @@
 #	(server-dump-debug)
 
 	(let (
-		canon (text "@1-@2", *RequestMethod (pack (tail -1 (chop *RequestPathname))))
+		local (pack (tail -1 (chop *RequestPathname)))
+		asset (text "@1/@2" AssetsRoot local)
+		canon (text "@1-@2", *RequestMethod local)
 		filepn (text "@1/@2.l", WebRoot canon) )
 
-		(if (index canon AvailablePages)
+		(when (index local AvailableAssets)
+			(serve-one-file asset)
+			(bye) )
+
+		(when (index canon AvailablePages)
 			(script filepn)
-			(http-response-not-found) ) )
+			(bye) )
+
+		(http-response-not-found) )
+)
+
+(de serve-one-file (pathname)
+	(http-status-ok)
+	(mapcar wr (in pathname
+		(make
+			(while (rd 1)
+				(link @) ) ) ) )
+	(bye)
 )
 
 (de http-status (code message)
