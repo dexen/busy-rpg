@@ -39,10 +39,14 @@
 
 (de my-server (WebRoot AvailablePages)
 	(off *RequestMethod *RequestHttpVersion
-		*RequestUrl *RequestPathname *RequestQuery
-		*RequestGet *RequestPost
+		*RequestUrl # whole uri
+			*RequestPathname # pathname part of uri, without the trailing "?"
+			*RequestQuery # query string part of uri, without the leading "?"
+		*RequestGet # the parsed/interpreted query, access with (get)
+		*RequestPost # the parsed/interpreted POST payload, access with (get)
 		*RequestHost *RequestReferer
-		*RequestPayload *RequestData)
+		*RequestPayload # request payload string
+	)
 
 	(in NIL
 		(case (setq *RequestMethod (till " " T))
