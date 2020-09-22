@@ -10,10 +10,11 @@ A web app ran on localhost with two HTTP APIs:
 
 #### Usage:
 * install PicoLisp (https://picolisp.com/)
-* install `listen1` (known source: plan9port, https://github.com/9fans/plan9port)
+* optional: install `listen1` (known source: plan9port, https://github.com/9fans/plan9port)
   * I plan on doing away with this requirement eventually
 * clone Busy RPG ( ` git clone https://github.com/dexen/busy-rpg ` )
 * start the HTTP server with ./SERVE
+  * alternatively, if you don't have `listen1`, start the HTTP server with ./SERVE_ALT
 * navigate to end-user GUI at http://localhost:7172
 * fill out character attributes
-* add XP
+* describe work you have performed to enjoy gaining the XP
