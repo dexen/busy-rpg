@@ -1,4 +1,4 @@
-#!/usr/bin/pil
+#!/usr/bin/env pil
 
 (load "@lib/http.l" "@lib/xhtml.l")
 
