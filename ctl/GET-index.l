@@ -59,6 +59,16 @@
 			(<button> NIL 'submit 'action "set-armor"
 				(<span> NIL "Save weapon") ) ) )
 
+	(<form> NIL 'POST "/work-performed?foo=bar&aa=bb"
+		(<tag> 'fieldset NIL
+			(<tag> 'legend NIL "Note performed work")
+			(<tag> 'label NIL "The work performed:"
+				(<br>)
+				(<tag> 'textarea '(("name" . "Work-Performed") ("rows" . 3) ("cols" . 40)))
+			(<br>)
+			(<button> NIL 'submit 'action "work-performed"
+				(<span> NIL "Save work") ) ) ) )
+
 	(<form> NIL 'POST "/xp-gain?foo=bar&aa=bb"
 		(<tag> 'fieldset NIL
 			(<tag> 'legend NIL "Adjust XP")

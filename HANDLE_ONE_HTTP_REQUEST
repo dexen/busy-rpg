@@ -9,7 +9,8 @@
 	"ctl"
 	'("GET-index" "POST-xp-gain" "POST-attributes"
 		"POST-weapon"
-		"POST-armor" )
+		"POST-armor"
+		"POST-work-performed" )
 	"public_html"
 	'("favicon.ico") )
 
