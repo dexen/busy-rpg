@@ -45,7 +45,8 @@
 	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Latest work")
 		(<tag> 'pre NIL
-			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc "xp-log.rc" 'XP-Log))) ) )
+			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc "xp-log.rc" 'XP-Log))) )
+		(<tag> 'a (cons "href" "/work-log") "Full work history...") )
 
 	(<div> '("style" . "clear: both"))
 
