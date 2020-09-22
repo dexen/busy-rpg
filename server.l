@@ -10,7 +10,8 @@
 			("host:" (setq *RequestHost (glue "" (cdr (line)))))
 			("referer:" (setq *RequestReferer (glue "" (cdr (line)))))
 			("content-length:" (setq *RequestContentLength (format (glue "" (cdr (line))))))
-			(T (if (eol) (char) (line T))) ) )
+			(T (<> (line T) ""))
+		) )
 
 	(let (a (chop *RequestUrl) i (or (index "?" a) (inc (length a))))
 		(setq *RequestPathname (glue "" (head (dec i) a)))
