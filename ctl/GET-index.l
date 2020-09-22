@@ -1,5 +1,6 @@
 (de Finfo (Label Value)
 	(<tag> 'b NIL Label)
+	(prin " ")
 	(<tag> 'span NIL Value)
 	(<br>) )
 
