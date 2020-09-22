@@ -17,12 +17,14 @@
 		(<tag> 'legend NIL "Current character")
 		(<p> NIL
 			(Finfo "Name:" (rc "character.rc" 'Name))
-			(Finfo "XP:" (+ (rc "character.rc" 'XP) 0)) ) )
+			(Finfo "HP:" (rc "character.rc" 'HP))
+			(Finfo "XP:" (rc "character.rc" 'XP)) ) )
 
 	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
 		(<tag> 'fieldset NIL
 			(<tag> 'legend NIL "Change attributes")
 			(FieldEdit "Name" 'text 'Name (rc "character.rc" 'Name))
+			(FieldEdit "HP" 'text 'HP (rc "character.rc" 'HP))
 			(<button> NIL 'submit 'action "xp-gain"
 				(<span> NIL "Save character") ) ) )
 
