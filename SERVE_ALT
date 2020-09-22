@@ -2,6 +2,9 @@
 
 # an alternative server in case you don't have the "listen1" tool
 
-while true; do
-	nc -l -p 7172 -e ./HANDLE_ONE_HTTP_REQUEST localhost
+for i in `seq 4`; do
+	while true; do
+		nc -l -p 7172 -e ./HANDLE_ONE_HTTP_REQUEST localhost
+	done &
 done
+wait
