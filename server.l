@@ -93,7 +93,8 @@
 			(script filepn)
 			(bye) )
 
-		(http-response-not-found) )
+		(http-response-not-found)
+		(bye) )
 )
 
 (de serve-one-file (pathname)
