@@ -7,7 +7,8 @@
 
 (my-server
 	"ctl"
-	'("GET-index", "POST-xp-gain", "POST-attributes")
-)
+	'("GET-index" "POST-xp-gain" "POST-attributes"
+		"POST-weapon"
+		"POST-armor" ) )
 
 (bye)
