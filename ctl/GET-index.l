@@ -18,7 +18,7 @@
 			(Finfo "Name:" (rc "character.rc" 'Name))
 			(Finfo "XP:" (+ (rc "character.rc" 'xp) 0)) ) )
 
-	(<form> NIL 'POST "/attributes"
+	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
 		(<tag> 'fieldset NIL
 			(<tag> 'legend NIL "Change attributes")
 			(FieldEdit "Name" 'text 'name (rc "character.rc" 'name))
