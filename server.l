@@ -70,7 +70,7 @@
 		(case (setq *RequestMethod (till " " T))
 			("GET" (my-htHead))
 			("POST" (my-htHead) (my-htPayload))
-			(T (prinl "unsupported HTTP method") (bye))
+			(T (prinl "unsupported HTTP method: \"" @ "\"") (bye))
 		)
 	)
 
