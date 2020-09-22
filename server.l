@@ -80,6 +80,9 @@
 		local (pack (tail -1 (chop *RequestPathname)))
 		asset (text "@1/@2" AssetsRoot local)
 		canon (text "@1-@2", *RequestMethod local)
+		canon (if (= canon "GET-")
+			(car AvailablePages)
+			canon )
 		filepn (text "@1/@2.l", WebRoot canon) )
 
 		(when (index local AvailableAssets)
