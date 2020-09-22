@@ -19,13 +19,8 @@
 				(length Work-Performed)
 				'(NIL (20)) ) ) ) )
 
-(show 'Work-Performed)
-(show 'TheHash)
-
 (setq PseudoRandomDigestOfWork (hex (head 4 (chop TheHash))))
 (setq XpGain (+ (% PseudoRandomDigestOfWork (- XpMax XpMin -2)) XpMin 1))
-(show 'PseudoRandomDigestOfWork)
-(show 'XpGain)
 
 (let Stack NIL
 	(rc "xp-log.rc" 'XP-Log
