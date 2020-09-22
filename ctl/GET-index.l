@@ -32,6 +32,11 @@
 			(Finfo "Name:" (rc "character.rc" 'Armor-Name))
 			(Finfo "Defense:" (rc "character.rc" 'Armor-Defense)) ) )
 
+	(<tag> 'fieldset '("style" . "float: left")
+		(<tag> 'legend NIL "Latest work")
+		(<tag> 'pre NIL
+			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc "xp-log.rc" 'XP-Log))) ) )
+
 	(<div> '("style" . "clear: both"))
 
 	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
