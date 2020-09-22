@@ -16,7 +16,7 @@
 		(<tag> 'legend NIL "Current character")
 		(<p> NIL
 			(Finfo "Name:" (rc "character.rc" 'Name))
-			(Finfo "XP:" (+ (rc "character.rc" 'xp) 0)) ) )
+			(Finfo "XP:" (+ (rc "character.rc" 'XP) 0)) ) )
 
 	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
 		(<tag> 'fieldset NIL

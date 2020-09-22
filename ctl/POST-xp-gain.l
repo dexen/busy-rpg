@@ -1,3 +1,4 @@
-(http-status-ok)
+(rc "character.rc" 'XP
+	(+ (or (rc "character.rc" 'XP) 0) (format (get '*RequestPost 'xp-gain))))
 
-(prinl "this is POST-xp-gain.l")
+(redirect "/index")
