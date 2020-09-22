@@ -7,8 +7,9 @@
 		# now the headers
 	(while
 		(case (lowc (till " ^M^J" T))
-			("host:" (setq *RequestHost (cdr (line))))
-			("referer:" (setq *RequestReferer (cdr (line))))
+			("host:" (setq *RequestHost (glue "" (cdr (line)))))
+			("referer:" (setq *RequestReferer (glue "" (cdr (line)))))
+			("content-length:" (setq *RequestContentLength (format (glue "" (cdr (line))))))
 			(T (if (eol) (char) (line T))) ) )
 
 	(let (a (chop *RequestUrl) i (or (index "?" a) (inc (length a))))
@@ -32,11 +33,25 @@
 			(_my-htQuerySegment tx '*RequestGet))
 		(split (chop query) "&") ) )
 
+(de my-htPayload ()
+	(setq *RequestPayload
+		(if *RequestContentLength
+			(glue "" (ht:Read *RequestContentLength))
+			(line T) ) )
+
+	(mapcar
+		'( (tx)
+			(_my-htQuerySegment tx '*RequestPost))
+		(split (chop *RequestPayload) "&") )
+)
+
 (de server-dump-debug ()
 	(prinl "*RequestMethod:" *RequestMethod "; *RequestHttpVersion:" *RequestHttpVersion)
 	(prinl "*RequestUrl:" *RequestUrl "; *RequestPathname:" *RequestPathname "; *RequestQuery:" *RequestQuery)
 	(prinl "*RequestHost:" *RequestHost)
 	(prinl "*RequestPayload:" *RequestPayload)
+	(prinl "*RequestContentLength:" *RequestContentLength)
+	(show '*RequestHeadersSingular)
 )
 
 (de my-server (WebRoot AvailablePages)
@@ -46,14 +61,15 @@
 			*RequestQuery # query string part of uri, without the leading "?"
 		*RequestGet # the parsed/interpreted query, access with (get)
 		*RequestPost # the parsed/interpreted POST payload, access with (get)
-		*RequestHost *RequestReferer
+		*RequestHost *RequestReferer *RequestContentLength
 		*RequestPayload # request payload string
+		*RequestHeadersSingular # this is technically wrong, because some headers can be repeated
 	)
 
 	(in NIL
 		(case (setq *RequestMethod (till " " T))
 			("GET" (my-htHead))
-			("POST" (my-htHead))
+			("POST" (my-htHead) (my-htPayload))
 			(T (prinl "unsupported HTTP method") (bye))
 		)
 	)
