@@ -1,0 +1,21 @@
+#!/usr/bin/env pil
+
+(setq P (port 7172))
+(loop
+	(setq *Sock (listen P))
+	(NIL (fork) (close P))
+	(close *Sock) )
+
+(setq Pipe (pipe (exec "./HANDLE_ONE_HTTP_REQUEST")))
+
+(on ContinueSock)
+(on ContinuePipe)
+
+(loop
+	(and ContinueSock (poll *Sock)
+		(in *Sock (out Pipe (if (rd 1) (wr @) (off ContinueSock)))) )
+	(and ContinuePipe (poll Pipe)
+		(in Pipe (out *Sock (if (rd 1) (wr @) (off ContinuePipe)))) )
+	(T (nor ContinuePipe)) )
+
+(bye)
