@@ -13,6 +13,16 @@
 (html
 	0 *Title *Css NIL
 
+	(<form> NIL 'POST "/work-performed?foo=bar&aa=bb"
+		(<tag> 'fieldset NIL
+			(<tag> 'legend NIL "Note performed work")
+			(<tag> 'label NIL "The work performed:"
+				(<br>)
+				(<tag> 'input '(("name" . "Work-Performed") ("size" . 64) ("autofocus")))
+			(<br>)
+			(<button> NIL 'submit 'action "work-performed"
+				(<span> NIL "Save work") ) ) ) )
+
 	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Current character")
 		(<p> NIL
