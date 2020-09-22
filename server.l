@@ -19,16 +19,18 @@
 	(my-htQuery *RequestQuery)
 )
 
-(de _my-htQuerySegment (segment)
-	(put '*RequestGet
+(de _my-htQuerySegment (segment GlobalVar)
+	(put GlobalVar
 		(intern (ht:Pack (car (split segment "=")) T))
 		(ht:Pack (cadr (split segment "=")) T) )
 #(show '*RequestGet)
 )
 
 (de my-htQuery (query)
-	(mapcar _my-htQuerySegment (split (chop query) "&"))
-)
+	(mapcar
+		'( (tx)
+			(_my-htQuerySegment tx '*RequestGet))
+		(split (chop query) "&") ) )
 
 (de server-dump-debug ()
 	(prinl "*RequestMethod:" *RequestMethod "; *RequestHttpVersion:" *RequestHttpVersion)
