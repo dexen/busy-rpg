@@ -2,4 +2,6 @@
 
 flag e +
 
+# see ./SERVE_ALT for an alternative in case you don't have the "listen1" tool
+
 listen1 'tcp!localhost!7172' ./HANDLE_ONE_HTTP_REQUEST
