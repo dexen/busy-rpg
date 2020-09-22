@@ -22,8 +22,8 @@
 
 (de _my-htQuerySegment (segment GlobalVar)
 	(put GlobalVar
-		(intern (ht:Pack (car (split segment "=")) T))
-		(ht:Pack (cadr (split segment "=")) T) )
+		(intern (ht:Pack (replace (car (split segment "=")) "+" " ") T))
+		(ht:Pack (replace (cadr (split segment "=")) "+" " ") T) )
 #(show '*RequestGet)
 )
 
