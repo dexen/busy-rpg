@@ -22,10 +22,11 @@
 
 	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
 		(<tag> 'fieldset NIL
-			(<tag> 'legend NIL "Change attributes")
+			(<tag> 'legend NIL "Set character attributes")
 			(FieldEdit "Name" 'text 'Name (rc "character.rc" 'Name))
-			(FieldEdit "HP" 'text 'HP (rc "character.rc" 'HP))
-			(<button> NIL 'submit 'action "xp-gain"
+			(FieldEdit "HP" 'text 'HP (or (rc "character.rc" 'HP) 100))
+			(FieldEdit "XP" 'text 'XP (or (rc "character.rc" 'XP) 0))
+			(<button> NIL 'submit 'action "set-character-attributes"
 				(<span> NIL "Save character") ) ) )
 
 	(<form> NIL 'POST "/xp-gain?foo=bar&aa=bb"
