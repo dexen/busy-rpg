@@ -21,7 +21,7 @@
 	(<form> NIL 'POST "/attributes?xyz=123&foo=bar"
 		(<tag> 'fieldset NIL
 			(<tag> 'legend NIL "Change attributes")
-			(FieldEdit "Name" 'text 'name (rc "character.rc" 'name))
+			(FieldEdit "Name" 'text 'Name (rc "character.rc" 'Name))
 			(<button> NIL 'submit 'action "xp-gain"
 				(<span> NIL "Save character") ) ) )
 
