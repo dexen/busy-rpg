@@ -2,9 +2,15 @@
 
 # an alternative server in case you don't have the "listen1" tool
 
+if test -e .busyrpg/instance-dev.txt; then
+	port=7788
+else
+	port=7172
+fi
+
 for i in `seq 4`; do
 	while true; do
-		nc -l -p 7172 -e ./HANDLE_ONE_HTTP_REQUEST localhost
+		nc -l -p $port -e ./HANDLE_ONE_HTTP_REQUEST localhost
 	done &
 done
 wait

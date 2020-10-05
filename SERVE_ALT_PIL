@@ -1,6 +1,9 @@
 #!/usr/bin/env pil
 
-(setq P (port 7172))
+(if (info ".busyrpg/instance-dev.txt")
+	(setq P (port 7788))
+	(setq P (port 7172)) )
+
 (loop
 	(setq *Sock (listen P))
 	(NIL (fork) (close P))

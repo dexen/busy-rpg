@@ -23,6 +23,10 @@
 			(<button> NIL 'submit 'action "work-performed"
 				(<span> NIL "Save work") ) ) ) )
 
+	(if (info ".busyrpg/instance-dev.txt")
+		(<p> '("style" . "background: green; color: white") "dev instance")
+		(<p> '("style" . "background: red") "production instance") )
+
 	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Current character")
 		(<p> NIL
