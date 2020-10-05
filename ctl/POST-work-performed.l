@@ -23,15 +23,15 @@
 (setq XpGain (+ (% PseudoRandomDigestOfWork (- XpMax XpMin -2)) XpMin 1))
 
 (let Stack NIL
-	(rc "xp-log.rc" 'XP-Log
+	(rc ".busyrpg/xp-log.rc" 'XP-Log
 		(when T
 			(setq Stack
-				(rc "xp-log.rc" 'XP-Log) )
+				(rc ".busyrpg/xp-log.rc" 'XP-Log) )
 			(push 'Stack (cons XpGain Work-Performed))
 			Stack ) ) )
 
 (let XP 0
-	(mapcar '((vv) (setq XP (+ XP (car vv)))) (rc "xp-log.rc" 'XP-Log))
-	(rc "character.rc" 'XP XP) )
+	(mapcar '((vv) (setq XP (+ XP (car vv)))) (rc ".busyrpg/xp-log.rc" 'XP-Log))
+	(rc ".busyrpg/character.rc" 'XP XP) )
 
 (redirect "/")

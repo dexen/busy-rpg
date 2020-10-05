@@ -9,7 +9,7 @@
 					(<tag> 'tr' NIL 
 						(<tag> 'td (cons "style" "text-align: right") Score)
 						(<tag> 'td NIL Work) ) ) )
-			(rc "xp-log.rc" 'XP-Log)
+			(rc ".busyrpg/xp-log.rc" 'XP-Log)
 		)
 	)
 )
