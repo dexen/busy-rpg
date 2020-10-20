@@ -30,8 +30,19 @@
 	(make (mapcar chain (mapcar cdr (nth *Katakana 1))))
 )
 
+(de katakana-apply-sokuon (Str)
+	(let (
+		A (chop Str)
+		AA (split A "ッ")
+		dup-char '((Char) (cons "" (cons (car Char) (cons (car Char) (cdr Char)))))
+		Eqq (mapcar dup-char (cdr AA))
+		Seqq (cons (car AA) Eqq) )
+		Vv (glue "" Seqq) )
+)
+
 (de random-katakana-word ()
 		(str-ucfirst
+			(katakana-apply-sokuon
 			(mapcar
 				'((N) (get *KatakanaLinear (random-integer N)))
-				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) )
+				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) ) )
