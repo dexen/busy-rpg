@@ -10,7 +10,8 @@
 	'("GET-index" "GET-work-log" "POST-xp-gain" "POST-attributes"
 		"POST-weapon"
 		"POST-armor"
-		"POST-work-performed" )
+		"POST-work-performed"
+		"GET-ten-names" )
 	"public_html"
 	'("favicon.ico") )
 
