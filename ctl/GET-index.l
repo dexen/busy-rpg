@@ -47,6 +47,13 @@
 			(Finfo "Defense:" (rc ".busyrpg/character.rc" 'Armor-Defense)) ) )
 
 	(<tag> 'fieldset '("style" . "float: left")
+		(<tag> 'legend NIL "Current vehicle")
+		(<p> NIL
+			(Finfo "Type:" (rc ".busyrpg/character.rc" 'Vehicle-Type))
+			(Finfo "Name:" (rc ".busyrpg/character.rc" 'Vehicle-Name))
+			(Finfo "Travel chance [%]:" (rc ".busyrpg/character.rc" 'Vehicle-Travel-Chance)) ) )
+
+	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Latest work")
 		(<tag> 'pre NIL
 			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log.rc" 'XP-Log))) )
@@ -78,6 +85,15 @@
 			(FieldEdit "Defense" 'text 'Armor-Defense (or (rc ".busyrpg/character.rc" 'Armor-Defense) 5))
 			(<button> NIL 'submit 'action "set-armor"
 				(<span> NIL "Save weapon") ) ) )
+
+	(<form> NIL 'POST "/vehicle?xyz=123&foo=bar"
+		(<tag> 'fieldset NIL
+			(<tag> 'legend NIL "Adjust vehicle")
+			(FieldEdit "Type" 'text 'Vehicle-Type (or (rc ".busyrpg/character.rc" 'Vehicle-Type) "Air skiff"))
+			(FieldEdit "Name" 'text 'Vehicle-Name (rc ".busyrpg/character.rc" 'Vehicle-Name))
+			(FieldEdit "Travel Chance (%)" 'text 'Vehicle-Travel-Chance (or (rc ".busyrpg/character.rc" 'Vehicle-Travel-Chance) 10))
+			(<button> NIL 'submit 'action "set-vehicle"
+				(<span> NIL "Save vehicle") ) ) )
 
 	(<form> NIL 'POST "/work-performed?foo=bar&aa=bb"
 		(<tag> 'fieldset NIL
