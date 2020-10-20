@@ -31,8 +31,7 @@
 )
 
 (de random-katakana-word ()
-	(let (Aaa 123)
 		(str-ucfirst
 			(mapcar
 				'((N) (get *KatakanaLinear (random-integer N)))
-				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) ) )
+				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) )
