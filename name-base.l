@@ -6,7 +6,28 @@
 
 	'(
 #	n	#	germinate	#	after long vowel	# reduplicates and unvoices	#	reduplicates and voices
-		(()	ン	ッ	ー	ヽ	ヾ)
+	# FIXME - reenable this
+#		(()	ン	ッ	ー	ヽ	ヾ)
+
+			# repeat, to increase chances
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
+		(()	n	ッ)
 
 #		(()	a	i	u	e	o	ya	yu	yo)
 		(∅	a	i	u	e	o)
