@@ -32,7 +32,8 @@
 		(<p> NIL
 			(Finfo "Name:" (rc ".busyrpg/character.rc" 'Name))
 			(Finfo "HP:" (rc ".busyrpg/character.rc" 'HP))
-			(Finfo "XP:" (rc ".busyrpg/character.rc" 'XP)) ) )
+			(Finfo "XP:" (rc ".busyrpg/character.rc" 'XP))
+			(Finfo "Township:" (rc ".busyrpg/character.rc" 'Township)) ) )
 
 	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Current weapon")
@@ -67,6 +68,7 @@
 			(FieldEdit "Name" 'text 'Name (rc ".busyrpg/character.rc" 'Name))
 			(FieldEdit "HP" 'text 'HP (or (rc ".busyrpg/character.rc" 'HP) 100))
 			(FieldEdit "XP" 'text 'XP (or (rc ".busyrpg/character.rc" 'XP) 0))
+			(FieldEdit "Township" 'text 'Township (or (rc ".busyrpg/character.rc" 'Township) "The home farm"))
 			(<button> NIL 'submit 'action "set-character-attributes"
 				(<span> NIL "Save character") ) ) )
 
@@ -91,7 +93,7 @@
 			(<tag> 'legend NIL "Adjust vehicle")
 			(FieldEdit "Type" 'text 'Vehicle-Type (or (rc ".busyrpg/character.rc" 'Vehicle-Type) "Air skiff"))
 			(FieldEdit "Name" 'text 'Vehicle-Name (rc ".busyrpg/character.rc" 'Vehicle-Name))
-			(FieldEdit "Travel Chance (%)" 'text 'Vehicle-Travel-Chance (or (rc ".busyrpg/character.rc" 'Vehicle-Travel-Chance) 10))
+			(FieldEdit "Travel Chance [%]" 'text 'Vehicle-Travel-Chance (or (rc ".busyrpg/character.rc" 'Vehicle-Travel-Chance) 10))
 			(<button> NIL 'submit 'action "set-vehicle"
 				(<span> NIL "Save vehicle") ) ) )
 
