@@ -62,8 +62,8 @@
 )
 
 (de random-katakana-word ()
-		(str-ucfirst
-			(katakana-apply-sokuon
+	(str-ucfirst
+		(katakana-apply-sokuon
 			(mapcar
 				'((N) (get *KatakanaLinear (random-integer N)))
 				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) ) )
