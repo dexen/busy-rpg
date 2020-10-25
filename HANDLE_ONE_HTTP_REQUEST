@@ -5,6 +5,8 @@
 (load "server.l")
 (load "html.l")
 
+(load "upgrade.l")
+
 (my-server
 	"ctl"
 	'("GET-index" "GET-work-log" "POST-xp-gain" "POST-attributes"
