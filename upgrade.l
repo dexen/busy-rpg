@@ -1,4 +1,3 @@
-	# FIXME remove
 (load "name-base.l")
 (load "lib.l")
 
