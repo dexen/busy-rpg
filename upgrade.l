@@ -14,6 +14,6 @@
 				Stack ) )
 		)
 		(mapcar save-to-v2 (rc ".busyrpg/xp-log.rc" 'XP-Log))
-		(call 'mv ".busyrpg/xp-log.rc" ".busyrpg/xp-log.rc.old")
+		(call 'mv ".busyrpg/xp-log-v2.rc" ".busyrpg/xp-log.rc.old")
 	)
 )
