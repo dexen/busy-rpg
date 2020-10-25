@@ -18,3 +18,7 @@
 		(setq Str (glue "" Str)) )
 	(text "@1@2" (uppc (car (chop Str))) (glue "" (cdr (chop Str))))
 )
+
+(de chance-random-percent (Percent)
+	(<= (random-integer 1 100) Percent)
+)
