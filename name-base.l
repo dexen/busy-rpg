@@ -61,9 +61,18 @@
 		Vv (glue "" Seqq) )
 )
 
-(de random-katakana-word ()
+(de katakana-word-random ()
 	(str-ucfirst
 		(katakana-apply-sokuon
 			(mapcar
 				'((N) (get *KatakanaLinear (random-integer N)))
 				(need (random-integer 2 7) (length *KatakanaLinear)) ) ) ) )
+
+(de settlement-name-random @
+	(katakana-word-random @))
+
+(de settlement-random @
+	(let Type (cond ((chance-random-percent 90) "village") ((chance-random-percent 90) "town") (T "city"))
+		(list Type (settlement-name-random))
+	)
+)
