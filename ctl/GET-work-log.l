@@ -4,12 +4,15 @@
 
 	(<tag> 'table NIL
 		(mapcar
-			'((Pair)
-				(let (Score (car Pair) Work (cadr Pair))
+			'((Rcd)
+				(let (Score (car Rcd) Work (cadr Rcd) Type (car (caddr Rcd)) Name (cadr (caddr Rcd)) )
 					(<tag> 'tr' NIL 
 						(<tag> 'td (cons "style" "text-align: right") Score)
-						(<tag> 'td NIL Work) ) ) )
-			(rc ".busyrpg/xp-log.rc" 'XP-Log)
+						(<tag> 'td NIL Work)
+						(<tag> 'td NIL Type)
+						(<tag> 'td NIL " of " Name)
+					) ) )
+			(rc ".busyrpg/xp-log-v2.rc" 'XP-Log)
 		)
 	)
 )

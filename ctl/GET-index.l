@@ -56,8 +56,19 @@
 
 	(<tag> 'fieldset '("style" . "float: left")
 		(<tag> 'legend NIL "Latest work")
-		(<tag> 'pre NIL
-			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log.rc" 'XP-Log))) )
+		(<tag> 'table NIL
+			(mapcar '((Rcd)
+					(<tag> 'tr NIL
+						(tag 'td NIL NIL (car Rcd))
+						(tag 'td NIL NIL (cadr Rcd))
+						(tag 'td NIL NIL (list "in " (car (caddr Rcd)) " of " (cadr (caddr Rcd))))
+					)
+				)
+				(head 8 (rc ".busyrpg/xp-log-v2.rc" 'XP-Log))
+			)
+		)
+#		(<tag> 'pre NIL
+#			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log.rc" 'XP-Log))) )
 		(<tag> 'a (cons "href" "/work-log") "Full work history...") )
 
 	(<div> '("style" . "clear: both"))
