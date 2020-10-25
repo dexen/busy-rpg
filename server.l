@@ -55,15 +55,13 @@
 	(show '*RequestHeadersSingular)
 )
 
-(de dev-mini-server (Arg)
+	# similar to (prog)
+(de dev-mini-server Args
 	(in NIL
 		(my-htHead) )
 	(html)
-	(when (lst? Arg)
-		(Arg)
-		(bye) )
-	(when (sym? Arg)
-		(prinl Arg)
+	(when Args
+		(mapcar '((Arg) (prinl (eval Arg) "<br>")) Args)
 		(bye) )
 )
 
