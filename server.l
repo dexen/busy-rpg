@@ -55,6 +55,18 @@
 	(show '*RequestHeadersSingular)
 )
 
+(de dev-mini-server (Arg)
+	(in NIL
+		(my-htHead) )
+	(html)
+	(when (lst? Arg)
+		(Arg)
+		(bye) )
+	(when (sym? Arg)
+		(prinl Arg)
+		(bye) )
+)
+
 (de my-server (WebRoot AvailablePages AssetsRoot AvailableAssets)
 	(off *RequestMethod *RequestHttpVersion
 		*RequestUrl # whole uri
