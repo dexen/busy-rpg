@@ -25,7 +25,8 @@
 (rc ".busyrpg/xp-log-v2.rc" 'XP-Log
 	(let (
 			Stack (rc ".busyrpg/xp-log-v2.rc" 'XP-Log)
-			Settlement (settlement-random)
+			CurrentSettlement (caddr (car Stack))
+			Settlement (if (chance-random-percent 20) (settlement-random) CurrentSettlement)
 		)
 		(push 'Stack (list XpGain Work-Performed Settlement))
 		Stack ) )
