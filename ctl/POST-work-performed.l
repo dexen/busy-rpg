@@ -22,13 +22,12 @@
 (setq PseudoRandomDigestOfWork (hex (head 4 (chop TheHash))))
 (setq XpGain (+ (% PseudoRandomDigestOfWork (- XpMax XpMin -2)) XpMin 1))
 
-(let Stack NIL
-	(rc ".busyrpg/xp-log-v2.rc" 'XP-Log
-		(when T
-			(setq Stack
-				(rc ".busyrpg/xp-log-v2.rc" 'XP-Log) )
-			(push 'Stack (list XpGain Work-Performed))
-			Stack ) ) )
+(rc ".busyrpg/xp-log-v2.rc" 'XP-Log
+	(let (
+			Stack (rc ".busyrpg/xp-log-v2.rc" 'XP-Log)
+		)
+		(push 'Stack (list XpGain Work-Performed))
+		Stack ) )
 
 (let XP 0
 	(mapcar '((vv) (setq XP (+ XP (car vv)))) (rc ".busyrpg/xp-log-v2.rc" 'XP-Log))
