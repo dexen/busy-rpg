@@ -68,7 +68,7 @@
 			)
 		)
 #		(<tag> 'pre NIL
-#			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log.rc" 'XP-Log))) )
+#			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log-v2.rc" 'XP-Log))) )
 		(<tag> 'a (cons "href" "/work-log") "Full work history...") )
 
 	(<div> '("style" . "clear: both"))
