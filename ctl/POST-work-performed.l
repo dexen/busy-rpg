@@ -25,8 +25,9 @@
 (rc ".busyrpg/xp-log-v2.rc" 'XP-Log
 	(let (
 			Stack (rc ".busyrpg/xp-log-v2.rc" 'XP-Log)
+			Settlement (settlement-random)
 		)
-		(push 'Stack (list XpGain Work-Performed))
+		(push 'Stack (list XpGain Work-Performed Settlement))
 		Stack ) )
 
 (let XP 0
