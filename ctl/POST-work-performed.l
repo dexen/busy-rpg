@@ -27,7 +27,7 @@
 		(when T
 			(setq Stack
 				(rc ".busyrpg/xp-log-v2.rc" 'XP-Log) )
-			(push 'Stack (cons XpGain Work-Performed))
+			(push 'Stack (list XpGain Work-Performed))
 			Stack ) ) )
 
 (let XP 0
