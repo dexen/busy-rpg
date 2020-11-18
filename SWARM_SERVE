@@ -1,0 +1,13 @@
+#!/usr/bin/env rc
+
+flag e +
+
+# see ./SERVE_ALT for an alternative in case you don't have the "listen1" tool
+
+if (~ $#* 2)
+	addr='tcp!' ^ $1 ^ '!' ^ $2
+if not {
+	echo 'Usage: ./SWARM_SERVE TCP_HOST TCP_PORT'
+	exit 1 }
+
+listen1 $addr ./HANDLE_ONE_HTTP_REQUEST
