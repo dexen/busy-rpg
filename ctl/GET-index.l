@@ -69,7 +69,9 @@
 		)
 #		(<tag> 'pre NIL
 #			(mapcar '((Pair) (prinl (car Pair) ": " (cadr Pair))) (head 8 (rc ".busyrpg/xp-log-v2.rc" 'XP-Log))) )
-		(<tag> 'a (cons "href" "/work-log") "Full work history...") )
+		(<tag> 'a (cons "href" "/work-log") "Full work history...")
+		(<tag> 'form '(("method" . "post") ("action" . "work-log-arst-purge"))
+			(<tag> 'button NIL "Purge all arst") ) )
 
 	(<div> '("style" . "clear: both"))
 

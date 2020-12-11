@@ -14,6 +14,7 @@
 		"POST-armor"
 		"POST-vehicle"
 		"POST-work-performed"
+		"POST-work-log-arst-purge"
 		"GET-ten-names" )
 	"public_html"
 	'("favicon.ico") )
