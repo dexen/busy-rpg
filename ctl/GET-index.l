@@ -21,7 +21,10 @@
 				(<tag> 'input '(("name" . "Work-Performed") ("size" . 64) ("autofocus")))
 			(<br>)
 			(<button> NIL 'submit 'action "work-performed"
-				(<span> NIL "Save work") ) ) ) )
+				(<span> NIL "Save work") )
+			" | "
+			(<tag> 'label NIL (<tag> 'input '(("type" . "checkbox") ("name" . "Operation-Amend") ("value" . 1)) ) "Amend")
+			) ) )
 
 	(if (info ".busyrpg/instance-dev.txt")
 		(<p> '("style" . "background: green; color: white") "dev instance")
@@ -118,7 +121,10 @@
 				(<tag> 'textarea '(("name" . "Work-Performed") ("rows" . 3) ("cols" . 40)))
 			(<br>)
 			(<button> NIL 'submit 'action "work-performed"
-				(<span> NIL "Save work") ) ) ) )
+				(<span> NIL "Save work") )
+			" | "
+			(<tag> 'label NIL (<tag> 'input '(("type" . "checkbox") ("name" . "Operation-Amend") ("value" . 1)) ) "Amend")
+			) ) )
 
 	(<form> NIL 'POST "/xp-gain?foo=bar&aa=bb"
 		(<tag> 'fieldset NIL

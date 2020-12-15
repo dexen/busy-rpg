@@ -28,6 +28,8 @@
 			CurrentSettlement (caddr (car Stack))
 			Settlement (if (chance-random-percent 20) (settlement-random) CurrentSettlement)
 		)
+		(when (get '*RequestPost 'Operation-Amend)
+			(pop 'Stack) )
 		(push 'Stack (list XpGain Work-Performed Settlement))
 		Stack ) )
 
